@@ -4,7 +4,7 @@
 
 This is not a toy chatbot project. This is enterprise-level AI backend engineering designed to teach real-world patterns and practices.
 
-## What You're Building
+## I am  Building
 
 A complete, industrial-strength document ingestion pipeline that:
 
@@ -19,27 +19,8 @@ A complete, industrial-strength document ingestion pipeline that:
 ✅ Includes comprehensive logging & error handling  
 ✅ Follows enterprise architecture patterns  
 
-## Why This Matters
-
-Most students build:
-- Notebook-only code
-- Single-file Python scripts
-- Hardcoded values
-- No error handling
-- No type safety
-
-You're building:
-- Production architecture
-- Modular, testable code
-- Configuration management
-- Enterprise error handling
-- Type-safe validation
-- Async/concurrent processing
-- Observability & logging
 
 This demonstrates real backend engineering, not toy projects.
-
-## What You'll Learn
 
 | Area | Topics |
 |------|--------|
@@ -354,18 +335,7 @@ DATABASE_MAX_OVERFLOW=40
 
 ## Learning Outcomes
 
-By completing this project, you'll:
 
-✅ Understand **production backend architecture**  
-✅ Build **type-safe applications** with Pydantic  
-✅ Design **scalable databases** with proper relationships  
-✅ Handle **multi-format documents** professionally  
-✅ Implement **intelligent text processing**  
-✅ Generate and search **embeddings at scale**  
-✅ Write **async, non-blocking** code  
-✅ Deploy **containerized applications**  
-✅ Follow **enterprise software patterns**  
-✅ Demonstrate **real AI systems engineering**  
 
 ## Key Differentiators
 
@@ -486,7 +456,7 @@ This project is for educational purposes. Use freely for learning.
 
 ---
 
-**Last Updated**: January 2024  
+**Last Updated**:  28 May 2026 
 **Python Version**: 3.10+  
 **Status**: Production-ready Phase 1
 
