@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: cortex-postgres
+    environment:
+      POSTGRES_DB: cortex_db
+      POSTGRES_USER: cortex
+      POSTGRES_PASSWORD: cortex
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cortex"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cortex-api
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://cortex:cortex@postgres:5432/cortex_db
+      DEBUG: "False"
+      ENVIRONMENT: production
+      EMBEDDING_DEVICE: cpu
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/logs:/app/logs
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  default:
+    name: cortex-network
